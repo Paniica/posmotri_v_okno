@@ -94,9 +94,9 @@ video {
   align-items: center;
 }
 
-.search-form__label:hover {
-  text-underline-offset: 5px;
+.search-form__label:hover .search-form__label-text {
   text-decoration: underline 1px #fff;
+  text-underline-offset: 5px;
 }
 
 .search-form__label:has(:focus-visible) {
@@ -116,6 +116,7 @@ video {
   font-size: inherit;
   color: currentColor;
   background-color: transparent;
+  appearance: none;
 }
 
 .search-form__textfield::placeholder {
@@ -129,8 +130,7 @@ video {
   outline: 1px solid #fff;
 }
 
-.search-form__textfield:focus,
-.search-form__textfield:focus-visible {
+.search-form__textfield:focus {
   outline: none;
 }
 
@@ -159,6 +159,7 @@ video {
   inline-size: 711px;
   margin: 0 0 11px;
   position: relative;
+  height: 386px;
 }
 
 .result__video {
@@ -189,13 +190,13 @@ video {
   text-decoration: underline 1px #fff;
 }
 
+.button:focus {
+  outline: none;
+}
+
 .button:focus-visible {
   outline-offset: 1px;
   outline: 1px solid #fff;
-}
-
-.button:focus {
-  outline: none;
 }
 
 .content__details {
@@ -220,11 +221,16 @@ video {
   position: relative;
   overflow-y: scroll;
   block-size: 298px;
-  scrollbar-width: none;
 }
 
 .content__list::-webkit-scrollbar {
-  display: none;
+  width: 3px;
+  height: 8px;
+  background-color: #545050;
+}
+
+.content__list::-webkit-scrollbar-thumb {
+  background: #fff;
 }
 
 .content__list-item:not(:last-child) {
@@ -245,12 +251,12 @@ video {
   text-decoration: underline 1px #fff;
 }
 
-.content__card-link:focus-visible {
-  outline: 1px solid #fff;
-}
-
 .content__card-link:focus {
   outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
 }
 
 .content__card-link_current {
